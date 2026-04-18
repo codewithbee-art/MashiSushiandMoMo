@@ -1444,45 +1444,6 @@ section {
   color: #6c757d;
 }
 
-.contact .php-email-form {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.contact .form-group {
-  margin-bottom: 15px;
-}
-
-.contact .form-control {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.contact .form-control:focus {
-  outline: none;
-  border-color: var(--color-primary);
-}
-
-.contact button {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.contact button:hover {
-  background: rgba(206, 18, 18, 0.8);
-}
-
 /*--------------------------------------------------------------
 # Footer
 ---------------------------------------------------------------*/

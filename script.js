@@ -282,22 +282,55 @@ document.addEventListener('DOMContentLoaded', function() {
   contactForms.forEach(form => {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      
+
+      // Check if this is the book-a-table form
+      const isBookingForm = form.closest('#book-a-table');
+
+      if (isBookingForm) {
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const people = document.getElementById('people').value;
+        const message = document.querySelector('textarea[name="message"]').value;
+
+        // Construct WhatsApp message
+        const whatsappMessage = encodeURIComponent(
+          `*New Table Booking Request*\n\n` +
+          `*Name:* ${name}\n` +
+          `*Email:* ${email}\n` +
+          `*Phone:* ${phone}\n` +
+          `*Date:* ${date}\n` +
+          `*Time:* ${time}\n` +
+          `*Number of People:* ${people}\n` +
+          `*Message:* ${message}`
+        );
+
+        // Open WhatsApp with the message
+        window.open(`https://wa.me/447405041863?text=${whatsappMessage}`, '_blank');
+
+        // Reset form
+        form.reset();
+        return;
+      }
+
       const loading = this.querySelector('.loading');
       const errorMessage = this.querySelector('.error-message');
       const sentMessage = this.querySelector('.sent-message');
-      
+
       // Show loading
       if (loading) loading.style.display = 'block';
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
-      
+
       // Simulate form submission
       setTimeout(() => {
         if (loading) loading.style.display = 'none';
         if (sentMessage) sentMessage.style.display = 'block';
         form.reset();
-        
+
         // Hide success message after 5 seconds
         setTimeout(() => {
           if (sentMessage) sentMessage.style.display = 'none';
