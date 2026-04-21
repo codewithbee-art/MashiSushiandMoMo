@@ -17,11 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   mobileNavToggle.forEach(toggle => {
     toggle.addEventListener('click', function() {
-      body.classList.toggle('mobile-nav-active');
-      
-      mobileNavToggle.forEach(t => {
-        t.classList.toggle('d-none');
-      });
+      const isActive = body.classList.contains('mobile-nav-active');
+
+      if (isActive) {
+        body.classList.remove('mobile-nav-active');
+      } else {
+        body.classList.add('mobile-nav-active');
+      }
     });
   });
 
@@ -29,16 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.navbar a').forEach(link => {
     link.addEventListener('click', function() {
       body.classList.remove('mobile-nav-active');
-      
-      mobileNavToggle.forEach(t => {
-        t.classList.remove('d-none');
-        if (t.classList.contains('mobile-nav-show')) {
-          t.classList.remove('d-none');
-        } else {
-          t.classList.add('d-none');
-        }
-      });
     });
+  });
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function(e) {
+    if (body.classList.contains('mobile-nav-active')) {
+      const isClickInsideNav = navbar.contains(e.target);
+      const isClickOnToggle = Array.from(mobileNavToggle).some(toggle => toggle.contains(e.target));
+
+      if (!isClickInsideNav && !isClickOnToggle) {
+        body.classList.remove('mobile-nav-active');
+      }
+    }
   });
 
   // Sticky Header on scroll
@@ -195,7 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
       breakpoints: {
         320: {
           slidesPerView: 1,
-          spaceBetween: 10
+          spaceBetween: 0,
+          centeredSlides: false
         },
         480: {
           slidesPerView: 2,
@@ -273,69 +279,125 @@ document.addEventListener('DOMContentLoaded', function() {
   if (playBtn) {
     playBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      openVideoModal('8iqoJ8EVsjs');
+      const videoId = this.getAttribute('data-videoid') || '8iqoJ8EVsjs';
+      openVideoModal(videoId);
     });
   }
 
-  // Contact Form Submission
-  const contactForms = document.querySelectorAll('.php-email-form');
-  contactForms.forEach(form => {
-    form.addEventListener('submit', function(e) {
+  // Book a Table Form - WhatsApp Integration
+  const bookingForm = document.querySelector('.booking-form');
+  const whatsappNumber = '447405041863';
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Check if this is the book-a-table form
-      const isBookingForm = form.closest('#book-a-table');
+      const name = document.getElementById('booking-name').value;
+      const email = document.getElementById('booking-email').value;
+      const phone = document.getElementById('booking-phone').value;
+      const date = document.getElementById('booking-date').value;
+      const time = document.getElementById('booking-time').value;
+      const people = document.getElementById('booking-people').value;
+      const message = document.querySelector('.booking-form textarea[name="message"]').value;
 
-      if (isBookingForm) {
-        // Get form data
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
-        const people = document.getElementById('people').value;
-        const message = document.querySelector('textarea[name="message"]').value;
+      let whatsappMessage = `*TABLE BOOKING*\n\n`;
+      whatsappMessage += `Name: ${name}\n`;
+      whatsappMessage += `Email: ${email}\n`;
+      whatsappMessage += `Phone: ${phone}\n`;
+      whatsappMessage += `Date: ${date}\n`;
+      whatsappMessage += `Time: ${time}\n`;
+      whatsappMessage += `Number of People: ${people}\n`;
+      if (message) whatsappMessage += `Message: ${message}\n`;
 
-        // Construct WhatsApp message
-        const whatsappMessage = encodeURIComponent(
-          `*New Table Booking Request*\n\n` +
-          `*Name:* ${name}\n` +
-          `*Email:* ${email}\n` +
-          `*Phone:* ${phone}\n` +
-          `*Date:* ${date}\n` +
-          `*Time:* ${time}\n` +
-          `*Number of People:* ${people}\n` +
-          `*Message:* ${message}`
-        );
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, '_blank');
+      bookingForm.reset();
+    });
+  }
 
-        // Open WhatsApp with the message
-        window.open(`https://wa.me/447405041863?text=${whatsappMessage}`, '_blank');
+  // Order Food Form - WhatsApp Integration
+  const orderForm = document.querySelector('.order-form');
 
-        // Reset form
-        form.reset();
-        return;
+  if (orderForm) {
+    orderForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('order-name').value;
+      const email = document.getElementById('order-email').value;
+      const phone = document.getElementById('order-phone').value;
+      const address = document.getElementById('order-address').value;
+      const food = document.getElementById('order-food').value;
+      const portion = document.getElementById('order-portion').value;
+      const message = document.querySelector('.order-form textarea[name="message"]').value;
+
+      let whatsappMessage = `*FOOD ORDER*\n\n`;
+      whatsappMessage += `Name: ${name}\n`;
+      whatsappMessage += `Email: ${email}\n`;
+      whatsappMessage += `Phone: ${phone}\n`;
+      whatsappMessage += `Delivery Address: ${address}\n`;
+      whatsappMessage += `Food(s): ${food}\n`;
+      whatsappMessage += `Portion: ${portion}\n`;
+      if (message) whatsappMessage += `Additional Message: ${message}\n`;
+
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, '_blank');
+      orderForm.reset();
+    });
+  }
+
+  // Message Form - WhatsApp Integration
+  const messageForm = document.querySelector('.message-form');
+
+  if (messageForm) {
+    messageForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('message-name').value;
+      const email = document.getElementById('message-email').value;
+      const phone = document.getElementById('message-phone').value;
+      const query = document.getElementById('message-query').value;
+      const message = document.querySelector('.message-form textarea[name="message"]').value;
+
+      let whatsappMessage = `*FEEDBACK/MESSAGE*\n\n`;
+      whatsappMessage += `Name: ${name}\n`;
+      whatsappMessage += `Email: ${email}\n`;
+      whatsappMessage += `Phone: ${phone}\n`;
+      whatsappMessage += `Query/Subject: ${query}\n`;
+      if (message) whatsappMessage += `Message: ${message}\n`;
+
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, '_blank');
+      messageForm.reset();
+    });
+  }
+
+  // Book a Table tabs functionality
+  const bookTabs = document.querySelectorAll('.book-a-table .nav-link');
+  const bookTabPanes = document.querySelectorAll('.book-a-table .tab-pane');
+
+  bookTabs.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Remove active class from all links
+      bookTabs.forEach(l => l.classList.remove('active'));
+      // Add active class to clicked link
+      this.classList.add('active');
+
+      // Get target id
+      const targetId = this.getAttribute('data-bs-target');
+      if (targetId) {
+        // Hide all tab panes
+        bookTabPanes.forEach(pane => {
+          pane.classList.remove('active', 'show');
+        });
+
+        // Show target tab pane
+        const targetPane = document.querySelector(targetId);
+        if (targetPane) {
+          targetPane.classList.add('active', 'show');
+        }
       }
-
-      const loading = this.querySelector('.loading');
-      const errorMessage = this.querySelector('.error-message');
-      const sentMessage = this.querySelector('.sent-message');
-
-      // Show loading
-      if (loading) loading.style.display = 'block';
-      if (errorMessage) errorMessage.style.display = 'none';
-      if (sentMessage) sentMessage.style.display = 'none';
-
-      // Simulate form submission
-      setTimeout(() => {
-        if (loading) loading.style.display = 'none';
-        if (sentMessage) sentMessage.style.display = 'block';
-        form.reset();
-
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          if (sentMessage) sentMessage.style.display = 'none';
-        }, 5000);
-      }, 1500);
     });
   });
 
@@ -345,21 +407,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function highlightNavLink() {
     const scrollY = window.pageYOffset;
+    let currentSection = '';
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 90;
+      const sectionTop = current.offsetTop - 100;
       const sectionId = current.getAttribute('id');
-      const navLink = document.querySelector('.navbar a[href="#' + sectionId + '"]');
 
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        if (navLink) {
-          navLinksAll.forEach(link => link.classList.remove('active'));
-          navLink.classList.add('active');
-        }
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentSection = sectionId;
       }
     });
+
+    if (currentSection) {
+      navLinksAll.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('active');
+        }
+      });
+    }
   }
+
+  // Add click handler to set active class immediately
+  navLinksAll.forEach(link => {
+    link.addEventListener('click', function() {
+      navLinksAll.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
 
   window.addEventListener('scroll', highlightNavLink);
   window.addEventListener('load', highlightNavLink);

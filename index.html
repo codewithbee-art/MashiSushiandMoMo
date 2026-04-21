@@ -199,8 +199,8 @@
                             <p>Menu</p>
                             <h3>Sushi</h3>
                         </div>
-                        <div class="row gy-5">
-                            <a href="assets/img/menu/MENU1_NEW UPDATE.png" class="glightbox"><img src="assets/img/menu/MENU1_NEW UPDATE.png" class="menu-img img-fluid" alt=""></a>
+                        <div class="row gy-3">
+                            <a href="assets/img/menu/SushiMenu.png" class="glightbox"><img src="assets/img/menu/SushiMenu.png" class="menu-img img-fluid" alt=""></a>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="menu-hot">
@@ -208,7 +208,7 @@
                             <p>Menu</p>
                             <h3>Hot Foods</h3>
                         </div>
-                        <div class="row gy-5">
+                        <div class="row gy-3">
                             <a href="assets/img/menu/MENU2_NEW UPDATED.png" class="glightbox"><img src="assets/img/menu/MENU2_NEW UPDATED.png" class="menu-img img-fluid" alt=""></a>
                         </div>
                     </div>
@@ -217,7 +217,7 @@
                             <p>Menu</p>
                             <h3>MOMO's</h3>
                         </div>
-                        <div class="row gy-5">
+                        <div class="row gy-3">
                             <a href="assets/img/menu/MENU - MOMO - 04-09.png" class="glightbox"><img src="assets/img/menu/MENU - MOMO - 04-09.png" class="menu-img img-fluid" alt=""></a>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                             <p>Menu</p>
                             <h3>Online Menu</h3>
                         </div>
-                        <div class="row gy-5">
+                        <div class="row gy-3">
                             <a href="assets/img/menu/MashiSushi_Online Menu_P1.png" class="glightbox"><img src="assets/img/menu/MashiSushi_Online Menu_P1.png" class="menu-img img-fluid" alt=""></a>
                             <a href="assets/img/menu/MashiSushi_Online Menu_P2.png" class="glightbox"><img src="assets/img/menu/MashiSushi_Online Menu_P2.png" class="menu-img img-fluid" alt=""></a>
                         </div>
@@ -348,44 +348,127 @@
                 <div class="row g-0">
                     <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/Cafe16_Reservation.PNG);" data-aos="zoom-out" data-aos-delay="200"></div>
                     <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
-                        <form action="" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-                            <div class="row gy-4">
-                                <div class="col-lg-4 col-md-6">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
-                                    <div class="validate"></div>
+                        <div class="w-100" data-aos="fade-up" data-aos-delay="100">
+                            <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                                <li class="nav-item">
+                                    <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#booking-tab">
+                                        <h4>Book a Table</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#order-tab">
+                                        <h4>Pickup Food</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#message-tab">
+                                        <h4>Message</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+                                <!-- Book a Table Form -->
+                                <div class="tab-pane fade active show" id="booking-tab">
+                                    <form action="#" method="post" role="form" class="booking-form">
+                                        <div class="row gy-3">
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" name="name" class="form-control" id="booking-name" placeholder="Your Name">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="email" class="form-control" name="email" id="booking-email" placeholder="Your Email">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" class="form-control" name="phone" id="booking-phone" placeholder="Your Phone">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="date" name="date" class="form-control" id="booking-date">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="time" class="form-control" name="time" id="booking-time" placeholder="Time">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="number" class="form-control" name="people" id="booking-people" placeholder="# of people">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <textarea class="form-control" name="message" rows="4" placeholder="Message"></textarea>
+                                                <div class="validate"></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center"><button type="submit">Book a Table</button></div>
+                                    </form>
                                 </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
-                                    <div class="validate"></div>
+                                <!-- Order Food Form -->
+                                <div class="tab-pane fade" id="order-tab">
+                                    <form action="#" method="post" role="form" class="order-form">
+                                        <div class="row gy-3">
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" name="name" class="form-control" id="order-name" placeholder="Your Name">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="email" class="form-control" name="email" id="order-email" placeholder="Your Email">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" class="form-control" name="phone" id="order-phone" placeholder="Your Phone">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" class="form-control" name="address" id="order-address" placeholder="Pickup Address" value="Pickup location: Unit 17, Gossamer Garden, E2 9FN" readonly>
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <input type="text" class="form-control" name="food-name" id="order-food" placeholder="Food Name (or multiple foods separated by comma)">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <input type="text" class="form-control" name="portion" id="order-portion" placeholder="Portion Size (e.g., small, medium, large)">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <textarea class="form-control" name="message" rows="4" placeholder="Additional Message"></textarea>
+                                                <div class="validate"></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center"><button type="submit">Order Food</button></div>
+                                    </form>
                                 </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone">
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <input type="text" name="date" class="form-control" id="date" placeholder="Date">
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <input type="text" class="form-control" name="time" id="time" placeholder="Time">
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <input type="number" class="form-control" name="people" id="people" placeholder="# of people">
-                                    <div class="validate"></div>
+                                <!-- Message Form -->
+                                <div class="tab-pane fade" id="message-tab">
+                                    <form action="#" method="post" role="form" class="message-form">
+                                        <div class="row gy-3">
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="text" name="name" class="form-control" id="message-name" placeholder="Your Name">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <input type="email" class="form-control" name="email" id="message-email" placeholder="Your Email">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <input type="text" class="form-control" name="phone" id="message-phone" placeholder="Your Phone">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <input type="text" class="form-control" name="query" id="message-query" placeholder="Query/Subject">
+                                                <div class="validate"></div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <textarea class="form-control" name="message" rows="4" placeholder="Your Message"></textarea>
+                                                <div class="validate"></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center"><button type="submit">Send Message</button></div>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Book a Table</button></div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -525,6 +608,11 @@
                         <a href="#" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2026 MashiSushi & MoMo. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
