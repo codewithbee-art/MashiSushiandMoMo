@@ -270,16 +270,17 @@ document.addEventListener('DOMContentLoaded', function() {
   if (watchVideoBtn) {
     watchVideoBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      openVideoModal('8iqoJ8EVsjs');
+      const videoId = this.getAttribute('href').match(/v=([^&]+)/)[1];
+      openVideoModal(videoId);
     });
   }
-  
+
   // Custom video modal for about section play button
   const playBtn = document.querySelector('.play-btn');
   if (playBtn) {
     playBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      const videoId = this.getAttribute('data-videoid') || '8iqoJ8EVsjs';
+      const videoId = this.getAttribute('href').match(/v=([^&]+)/)[1];
       openVideoModal(videoId);
     });
   }
