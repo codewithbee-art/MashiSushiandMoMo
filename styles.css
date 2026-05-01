@@ -502,21 +502,61 @@ section {
 }
 
 .header .logo img {
-  max-height: 50px;
-  margin-right: 10px;
+  max-height: 90px;
+  margin-right: 2px;
 }
 
-.header .logo h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #000;
-  margin: 0;
-  font-family: var(--font-secondary);
-  line-height: 1;
+@media (max-width: 768px) {
+  .header .logo img {
+    max-height: 60px;
+  }
+  
+  .header .logo-text {
+    margin-left: 5px;
+  }
+  
+  .header .logo-main {
+    font-size: 24px;
+  }
+  
+  .header .logo-sub {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
 }
 
-.header .logo h1 span {
+.header .logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.header .logo-main {
+  font-size: 31px;
+  font-weight: 900;
   color: var(--color-primary);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.header .logo-sub {
+  font-size: 11px;
+  font-weight: 300;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.header .logo-sub .logo-accent {
+  color: var(--color-primary);
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
 .header .btn-book-a-table,
@@ -1485,6 +1525,7 @@ section {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  min-height: 38px;
 }
 
 .book-a-table input[type="date"]::-webkit-calendar-picker-indicator,
@@ -1497,11 +1538,27 @@ section {
   .book-a-table input[type="date"]::-webkit-datetime-edit,
   .book-a-table input[type="time"]::-webkit-datetime-edit {
     padding: 0;
+    color: #6c757d;
   }
 
   .book-a-table input[type="date"]::-webkit-datetime-edit-fields-wrapper,
   .book-a-table input[type="time"]::-webkit-datetime-edit-fields-wrapper {
     padding: 0;
+  }
+
+  .book-a-table input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+  .book-a-table input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+    background: #fff;
+  }
+
+  .book-a-table input[type="date"][value=""],
+  .book-a-table input[type="time"][value=""] {
+    color: #6c757d;
+  }
+
+  .book-a-table input[type="date"][value=""]::-webkit-datetime-edit,
+  .book-a-table input[type="time"][value=""]::-webkit-datetime-edit {
+    color: #6c757d;
   }
 }
 

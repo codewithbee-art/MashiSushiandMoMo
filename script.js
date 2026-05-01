@@ -31,6 +31,34 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.navbar a').forEach(link => {
     link.addEventListener('click', function() {
       body.classList.remove('mobile-nav-active');
+
+      // Handle tab switching from navigation links
+      const targetTab = this.getAttribute('data-tab');
+      if (targetTab) {
+        const targetSection = this.getAttribute('href');
+        setTimeout(() => {
+          const tabButton = document.querySelector(`[data-bs-target="#${targetTab}-tab"]`);
+          if (tabButton) {
+            tabButton.click();
+          }
+        }, 500);
+      }
+    });
+  });
+
+  // Handle tab switching for hero section button and other links
+  document.querySelectorAll('a[href="#book-a-table"]').forEach(link => {
+    link.addEventListener('click', function() {
+      const targetTab = this.getAttribute('data-tab');
+      if (!targetTab) {
+        // No data-tab attribute, reset to default booking-tab
+        setTimeout(() => {
+          const bookingTab = document.querySelector('[data-bs-target="#booking-tab"]');
+          if (bookingTab) {
+            bookingTab.click();
+          }
+        }, 500);
+      }
     });
   });
 

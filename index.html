@@ -10,7 +10,7 @@
     <meta content="index, follow" name="robots">
     <meta content="English" name="language">
     <meta content="7 days" name="revisit-after">
-    <link href="assets/img/mashi sushi.png" rel="icon">
+    <link href="assets/img/logo mashi.png" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -40,20 +40,24 @@
     <header id="header" class="header fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/mashi sushi.png" alt="mashisushi logo">
-                <h1>Mashi Sushi<span>.</span></h1>
+                <img src="assets/img/mashisushilogo.png" alt="mashisushi logo">
+                <div class="logo-text">
+                    <div class="logo-main">MASHI</div>
+                    <div class="logo-sub">SUSHI <span class="logo-accent">&</span> MOMO</div>
+                </div>
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li class="mobile-order-btn"><a class="btn-book-a-table" href="#why-us">Order Online</a></li>
+                    <li class="mobile-order-btn"><a class="btn-book-a-table" href="#why-us">Deliveroo</a></li>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#menu">Menu</a></li>
+                    <li><a href="#book-a-table" data-tab="order">Pickup</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <a class="btn-book-a-table desktop-order-btn" href="#why-us">Order Online</a>
+            <a class="btn-book-a-table desktop-order-btn" href="#why-us">Deliveroo</a>
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         </div>
@@ -67,7 +71,7 @@
                     <h2 data-aos="fade-up">Enjoy Your Healthy<br>Delicious Food</h2>
                     <p data-aos="fade-up" data-aos-delay="100">Fresh flavors, wholesome ingredients, and meals crafted with care. Indulge in goodness with every bite!</p>
                     <div class="d-flex justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#menu" class="btn-book-a-table">Pick up</a>
+                        <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
                         <a href="https://www.youtube.com/watch?v=0IS7gjDfVKk" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                     </div>
                 </div>
@@ -102,7 +106,7 @@
                                 <li><i class="bi bi-check2-all"></i> Handcrafted Dishes: Each dish is made with care, ensuring an unforgettable dining experience.</li>
                             </ul>
                             <p>
-                                Whether you're in the mood for sushi or craving Nepali momos, Mashi Sushi & Nepa Momo offers a unique fusion of flavors, ready to delight your taste buds!
+                                Whether you're in the mood for sushi or craving Nepali momos, Mashi Sushi & Momo offers a unique fusion of flavors, ready to delight your taste buds!
                             </p>
                             <div class="position-relative mt-4">
                                 <img src="assets/img/gallery/Cafe23.PNG" class="img-fluid" alt="">
@@ -121,10 +125,10 @@
                     <div class="col-lg-4 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
                         <div class="why-box">
                             <h3>Order Your Favorites Online!</h3>
-                            <h5>Welcome to Mashi Sushi & Nepa MO:MO!</h5>
+                            <h5>Welcome to Mashi Sushi & MOMO!</h5>
                             <p>
                                 Craving your favorite sushi rolls, Nepalese momos, or other delicious dishes? We've made it easier than ever for you to enjoy your meal with just a scan!
-                                Simply scan the QR codes below to access our ordering platforms and have your food ready for pickup or delivered straight to your door.
+                                Simply scan the QR codes below or click the link to access our ordering platforms and have your food ready for pickup or delivered straight to your door.
                             </p>
                         </div>
                     </div>
@@ -135,7 +139,7 @@
                                     <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                         <img src="assets/img/QR-code/Nepacafe.png" alt="QR code for Mashi Sushi" width="150">
                                         <h4>Mashi Sushi - The Oval</h4>
-                                        <p>Scan this QR code to quickly access our full menu and place your order through deliveroo. Enjoy your favorite dishes from Mashi Sushi in just a few clicks!</p>
+                                        <p>Scan this QR code or click the link to quickly access our menu and place your order through Deliveroo. Enjoy your favorite dishes from Mashi Sushi in just a few clicks!</p>
                                     </div>
                                 </a>
                             </div>
@@ -144,11 +148,12 @@
                                     <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                         <img src="assets/img/QR-code/MOMO.png" alt="QR code for NEPA MO:MO" width="150">
                                         <h4>NEPA MO:MO:s (Hackney Road) - Hoxton</h4>
-                                        <p>Scan this QR code to quickly access our full menu and place your order through deliveroo. Enjoy your favorite dishes from NEPA MO:MO:s in just a few clicks!</p>
+                                        <p>Scan this QR code or click the link to view our menu and order on Deliveroo. Enjoy your favorite dishes from NEPA Momo in just a few clicks!</p>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                                <a href="#book-a-table">
                                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                     <i class="bi bi-geo-alt-fill"></i>
                                     <h4>Order & Pickup Made Easy!</h4>
@@ -248,7 +253,7 @@
                         <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <div class="row gy-4 justify-content-center">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-8 text-center">
                                         <div class="testimonial-content">
                                             <p>
                                                 <i class="bi bi-quote quote-icon-left"></i>
@@ -261,16 +266,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-2 text-center">
-                                        <img src="assets/img/testimonials/test4.jpg" class="img-fluid testimonial-img" alt="">
-                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <div class="row gy-4 justify-content-center">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-8 text-center">
                                         <div class="testimonial-content">
                                             <p>
                                                 <i class="bi bi-quote quote-icon-left"></i>
@@ -283,16 +285,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-2 text-center">
-                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="img-fluid testimonial-img" alt="">
-                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <div class="row gy-4 justify-content-center">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-8 text-center">
                                         <div class="testimonial-content">
                                             <p>
                                                 <i class="bi bi-quote quote-icon-left"></i>
@@ -305,16 +304,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-2 text-center">
-                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="img-fluid testimonial-img" alt="">
-                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <div class="row gy-4 justify-content-center">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-8 text-center">
                                         <div class="testimonial-content">
                                             <p>
                                                 <i class="bi bi-quote quote-icon-left"></i>
@@ -326,9 +322,6 @@
                                                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-2 text-center">
-                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="img-fluid testimonial-img" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -387,32 +380,33 @@
                                 </li>
                             </ul>
                             <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+
                                 <!-- Book a Table Form -->
                                 <div class="tab-pane fade active show" id="booking-tab">
                                     <form action="#" method="post" role="form" class="booking-form">
                                         <div class="row gy-3">
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" name="name" class="form-control" id="booking-name" placeholder="Your Name">
+                                                <input type="text" name="name" class="form-control" id="booking-name" placeholder="Your Name" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="email" class="form-control" name="email" id="booking-email" placeholder="Your Email">
+                                                <input type="email" class="form-control" name="email" id="booking-email" placeholder="Your Email" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" class="form-control" name="phone" id="booking-phone" placeholder="Your Phone">
+                                                <input type="text" class="form-control" name="phone" id="booking-phone" placeholder="Your Phone" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="date" name="date" class="form-control" id="booking-date" placeholder="Select Date">
+                                                <input type="date" name="date" class="form-control" id="booking-date" placeholder="Select Date" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="time" class="form-control" name="time" id="booking-time" placeholder="Time: -- : --">
+                                                <input type="time" class="form-control" name="time" id="booking-time" placeholder="Select Time" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="number" class="form-control" name="people" id="booking-people" placeholder="# of people">
+                                                <input type="number" class="form-control" name="people" id="booking-people" placeholder="# of people" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-12">
@@ -428,27 +422,27 @@
                                     <form action="#" method="post" role="form" class="order-form">
                                         <div class="row gy-3">
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" name="name" class="form-control" id="order-name" placeholder="Your Name">
+                                                <input type="text" name="name" class="form-control" id="order-name" placeholder="Your Name" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="email" class="form-control" name="email" id="order-email" placeholder="Your Email">
+                                                <input type="email" class="form-control" name="email" id="order-email" placeholder="Your Email" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" class="form-control" name="phone" id="order-phone" placeholder="Your Phone">
+                                                <input type="text" class="form-control" name="phone" id="order-phone" placeholder="Your Phone" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" class="form-control" name="address" id="order-address" placeholder="Pickup Address" value="Pickup location: Unit 17, Gossamer Garden, E2 9FN" readonly>
+                                                <input type="text" class="form-control" name="address" id="order-address" placeholder="Pickup Address" value="Pickup: Unit 17, Gossamer Garden, E2 9FN" readonly>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
-                                                <input type="text" class="form-control" name="food-name" id="order-food" placeholder="Food Name (or multiple foods separated by comma)">
+                                                <input type="text" class="form-control" name="food-name" id="order-food" placeholder="Food Name (or multiple foods separated by comma)" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
-                                                <input type="text" class="form-control" name="portion" id="order-portion" placeholder="Portion Size (e.g., small, medium, large)">
+                                                <input type="text" class="form-control" name="portion" id="order-portion" placeholder="Portion Size (e.g., small, medium, large)" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-12">
@@ -464,23 +458,23 @@
                                     <form action="#" method="post" role="form" class="message-form">
                                         <div class="row gy-3">
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" name="name" class="form-control" id="message-name" placeholder="Your Name">
+                                                <input type="text" name="name" class="form-control" id="message-name" placeholder="Your Name" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="email" class="form-control" name="email" id="message-email" placeholder="Your Email">
+                                                <input type="email" class="form-control" name="email" id="message-email" placeholder="Your Email" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
-                                                <input type="text" class="form-control" name="phone" id="message-phone" placeholder="Your Phone">
+                                                <input type="text" class="form-control" name="phone" id="message-phone" placeholder="Your Phone" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
-                                                <input type="text" class="form-control" name="query" id="message-query" placeholder="Query/Subject">
+                                                <input type="text" class="form-control" name="query" id="message-query" placeholder="Query/Subject" required>
                                                 <div class="validate"></div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <textarea class="form-control" name="message" rows="4" placeholder="Your Message"></textarea>
+                                                <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
                                                 <div class="validate"></div>
                                             </div>
                                         </div>
