@@ -337,7 +337,7 @@ img {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  padding: 80px 0;
+  padding: 40px 0;
   scroll-margin-top: 90px;
 }
 
@@ -502,7 +502,7 @@ section {
 }
 
 .header .logo img {
-  max-height: 90px;
+  max-height: 80px;
   margin-right: 2px;
 }
 
@@ -1216,23 +1216,22 @@ section {
 # Review QR Code Section
 --------------------------------------------------------------*/
 .review-qr {
-  padding: 80px 0;
-  background: #fff;
+  padding: 10px 0;
+  background: #e9ecef;
 }
 
 .review-banner {
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  max-height: 200px;
+  max-height: 250px;
+  width: 100%;
   object-fit: contain;
+  background: #fff;
+  transition: transform 0.3s ease;
 }
 
-.review-qr-code {
-  max-width: 200px;
-  max-height: 200px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  object-fit: contain;
+.review-banner:hover {
+  transform: scale(1.05);
 }
 
 .review-qr p {
@@ -1244,7 +1243,7 @@ section {
 
 @media (max-width: 768px) {
   .review-qr {
-    padding: 40px 0;
+    padding: 0px 0;
   }
 
   .review-qr .row {
@@ -1270,7 +1269,7 @@ section {
 }
 
 .testimonials .section-header {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .testimonials .testimonials-carousel,
