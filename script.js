@@ -339,7 +339,12 @@ document.addEventListener('DOMContentLoaded', function() {
       if (message) whatsappMessage += `Message: ${message}\n`;
 
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-      window.open(whatsappUrl, '_blank');
+      // Use window.location.href for mobile, window.open for desktop
+      if (window.innerWidth < 768) {
+        window.location.href = whatsappUrl;
+      } else {
+        window.open(whatsappUrl, '_blank');
+      }
       bookingForm.reset();
     });
   }
@@ -369,7 +374,12 @@ document.addEventListener('DOMContentLoaded', function() {
       if (message) whatsappMessage += `Additional Message: ${message}\n`;
 
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-      window.open(whatsappUrl, '_blank');
+      // Use window.location.href for mobile, window.open for desktop
+      if (window.innerWidth < 768) {
+        window.location.href = whatsappUrl;
+      } else {
+        window.open(whatsappUrl, '_blank');
+      }
       orderForm.reset();
     });
   }
@@ -395,7 +405,12 @@ document.addEventListener('DOMContentLoaded', function() {
       if (message) whatsappMessage += `Message: ${message}\n`;
 
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-      window.open(whatsappUrl, '_blank');
+      // Use window.location.href for mobile, window.open for desktop
+      if (window.innerWidth < 768) {
+        window.location.href = whatsappUrl;
+      } else {
+        window.open(whatsappUrl, '_blank');
+      }
       messageForm.reset();
     });
   }
